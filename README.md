@@ -1,2 +1,1 @@
-# scorttt.github.io
-# scort.cc
+<p style="text-align: center;">WIP</p>
