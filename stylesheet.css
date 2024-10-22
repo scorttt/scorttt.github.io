@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css?family=JetBrains+Mono');
+
+*::before,*::after
+{
+  color: #fff;
+}
+div {
+  font-family: 'JetBrains Mono', sans-serif;
+  text-align: center;
+  font-size: 30px;
+  color: #bbb;
+}
+.container {
+  display: flex;
+  gap: 4rem;
+  position: relative;
+  justify-content: center;
+  width: 100%;
+  overflow-x: hidden;
+}
+a {
+  color: inherit;
+  text-decoration: inherit;
+  position: relative;
+  color: #fff;
+}
+a:hover {
+  color: #eee;
+}
+.leftside {
+  text-align: left;
+}
+
+.leftside > p > a::before {
+  content: ">";
+  position: absolute;
+  display: inline-block;
+  left: -60px;
+  transition: all 0.5s cubic-bezier(1, 2, 0, 1);
+  color: #ffffff00;
+}
+
+.leftside > p > a:hover::before {
+  position: absolute;
+  display: inline-block;
+  left: -40px;
+  color:inherit;
+}
+
+html,
+body {
+  height: 100dvh;
+  margin: 0;
+  user-select: none;
+  overflow-x: hidden;
+  
+}
+body {
+  background-color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+.headlink,.headlink::before,.headlink::after{
+  color: rgb(0, 195, 255);
+}
+.headlink:hover,.headlink:hover::before,.headlink:hover::after{
+  color: rgb(124, 224, 255);
+}

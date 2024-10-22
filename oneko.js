@@ -9,18 +9,18 @@
 
   const nekoEl = document.createElement("div");
 
-  let nekoPosX = 32;
-  let nekoPosY = 32;
+  let nekoPosX = window.innerWidth / 1.85;
+  let nekoPosY = window.innerHeight / 2.75;
 
-  let mousePosX = 0;
-  let mousePosY = 0;
+  let mousePosX = window.innerWidth / 1.85;
+  let mousePosY = window.innerHeight / 2.75;
 
   let frameCount = 0;
   let idleTime = 0;
   let idleAnimation = null;
   let idleAnimationFrame = 0;
 
-  const nekoSpeed = 10;
+  const nekoSpeed = 15;
   const spriteSets = {
     idle: [[-3, -3]],
     alert: [[-7, -3]],
