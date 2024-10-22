@@ -9,11 +9,11 @@
 
   const nekoEl = document.createElement("div");
 
-  let nekoPosX = window.innerWidth / 1.85;
-  let nekoPosY = window.innerHeight / 2.75;
+  let nekoPosX = window.innerWidth / 2;
+  let nekoPosY = window.innerHeight / 2;
 
-  let mousePosX = window.innerWidth / 1.85;
-  let mousePosY = window.innerHeight / 2.75;
+  let mousePosX = window.innerWidth / 2;
+  let mousePosY = window.innerHeight / 2;
 
   let frameCount = 0;
   let idleTime = 0;
