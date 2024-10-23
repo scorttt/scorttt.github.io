@@ -47,13 +47,31 @@ a:hover {
   color:inherit;
 }
 
+.spacer {
+  height: 1px;
+}
+
+.spacerlarge {
+  height: 20px;
+}
+
+.folder-icon {
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+  image-rendering: pixelated;
+}
+
+.projects-link:hover .folder-icon {
+  filter: brightness(0.8);
+}
+
 html,
 body {
   height: 100dvh;
   margin: 0;
   user-select: none;
   overflow-x: hidden;
-  
 }
 body {
   background-color: #000000;
