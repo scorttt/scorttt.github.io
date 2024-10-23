@@ -10,14 +10,7 @@ div {
   font-size: 30px;
   color: #bbb;
 }
-.container {
-  display: flex;
-  gap: 4rem;
-  position: relative;
-  justify-content: center;
-  width: 100%;
-  overflow-x: hidden;
-}
+
 a {
   color: inherit;
   text-decoration: inherit;
@@ -57,7 +50,7 @@ a:hover {
 
 html,
 body {
-  height: 100dvh;
+  min-height: 100dvh;
   margin: 0;
   user-select: none;
   overflow-x: hidden;
@@ -67,8 +60,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  
 }
+
 .headlink,.headlink::before,.headlink::after{
   color: rgb(0, 195, 255);
 }
