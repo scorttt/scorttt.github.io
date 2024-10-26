@@ -20,7 +20,11 @@
   let idleAnimation = null;
   let idleAnimationFrame = 0;
 
-  const nekoSpeed = 15;
+  let isDragging = false;
+  let dragOffsetX = 0;
+  let dragOffsetY = 0;
+
+  const nekoSpeed = 20;
   const spriteSets = {
     idle: [[-3, -3]],
     alert: [[-7, -3]],
@@ -90,11 +94,11 @@
     nekoEl.style.width = "32px";
     nekoEl.style.height = "32px";
     nekoEl.style.position = "fixed";
-    nekoEl.style.pointerEvents = "none";
+    nekoEl.style.pointerEvents = "auto"; 
     nekoEl.style.imageRendering = "pixelated";
     nekoEl.style.left = `${nekoPosX - 16}px`;
     nekoEl.style.top = `${nekoPosY - 16}px`;
-    nekoEl.style.zIndex = 2147483647;
+    nekoEl.style.zIndex = Number.MAX_VALUE;
 
     let nekoFile = "./oneko.gif"
     const curScript = document.currentScript
@@ -105,12 +109,40 @@
 
     document.body.appendChild(nekoEl);
 
-    document.addEventListener("mousemove", function (event) {
-      mousePosX = event.clientX;
-      mousePosY = event.clientY;
-    });
+    document.addEventListener("mousemove", onMouseMove);
 
     window.requestAnimationFrame(onAnimationFrame);
+
+    nekoEl.addEventListener("mousedown", onMouseDown);
+    document.addEventListener("mouseup", onMouseUp);
+  }
+
+  function onMouseMove(event) {
+    mousePosX = event.clientX;
+    mousePosY = event.clientY;
+  
+    if (isDragging) {
+      nekoPosX = mousePosX - dragOffsetX;
+      nekoPosY = mousePosY - dragOffsetY;
+      updateNekoPosition();
+    }
+  }
+  
+  function onMouseDown(event) {
+    isDragging = true;
+    dragOffsetX = event.clientX - nekoPosX;
+    dragOffsetY = event.clientY - nekoPosY;
+  }
+  
+  function onMouseUp() {
+    isDragging = false;
+  }
+  
+  function updateNekoPosition() {
+    nekoPosX = Math.min(Math.max(16, nekoPosX), window.innerWidth - 16);
+    nekoPosY = Math.min(Math.max(16, nekoPosY), window.innerHeight - 16);
+    nekoEl.style.left = `${nekoPosX - 16}px`;
+    nekoEl.style.top = `${nekoPosY - 16}px`;
   }
 
   let lastFrameTimestamp;
@@ -164,7 +196,7 @@
       }
       idleAnimation =
         avalibleIdleAnimations[
-          Math.floor(Math.random() * avalibleIdleAnimations.length)
+        Math.floor(Math.random() * avalibleIdleAnimations.length)
         ];
     }
 
@@ -198,6 +230,12 @@
 
   function frame() {
     frameCount += 1;
+
+    if (isDragging) {
+      setSprite("scratchWallS", 0);
+      return;
+    }
+
     const diffX = nekoPosX - mousePosX;
     const diffY = nekoPosY - mousePosY;
     const distance = Math.sqrt(diffX ** 2 + diffY ** 2);
