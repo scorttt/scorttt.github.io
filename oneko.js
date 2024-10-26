@@ -232,7 +232,7 @@
     frameCount += 1;
 
     if (isDragging) {
-      setSprite("scratchWallS", 0);
+      setSprite("scratchWallS", frameCount);
       return;
     }
 
