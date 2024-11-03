@@ -1,13 +1,19 @@
-@import url('https://fonts.googleapis.com/css?family=Tiny5');
+/* @import url('https://fonts.googleapis.com/css?family=Tiny5');*/
 
-*::before,*::after
-{
-  color: #fff;
+@font-face {
+  font-family: "mintbitregular";
+  src: url("assets/Mintbit-pprmint.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
 }
+html {
+  font-smooth: never;
+}
+
 div {
-  font-family: 'Tiny5', sans-serif;
+  font-family: 'mintbitregular';
   text-align: center;
-  font-size: 30px;
+  font-size: 25px;
   color: #bbb;
 }
 
@@ -28,7 +34,7 @@ a:hover {
   content: ">>";
   position: absolute;
   display: inline-block;
-  left: -60px;
+  left: -50px;
   transition: all 0.5s cubic-bezier(0.5, 1, 0, 1);
   color: #ffffff00;
   pointer-events: none;
@@ -37,7 +43,7 @@ a:hover {
 .leftside > p > a:hover::before {
   position: absolute;
   display: inline-block;
-  left: -40px;
+  left: -30px;
   color:inherit;
   pointer-events: none;
 }
@@ -53,15 +59,15 @@ a:hover {
 html,
 body {
   min-height: 100dvh;
+  padding: 0 50px;
   margin: 0;
   user-select: none;
   overflow-x: hidden;
-}
-body {
   background-color: #000000;
   display: flex;
   align-items: center;
   justify-content: center;
+  
 }
 
 .headlink,.headlink::before,.headlink::after{
