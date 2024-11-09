@@ -30,6 +30,15 @@ a:hover {
   text-align: left;
 }
 
+.link {
+  margin-top: 0px; /* spacing before link */
+  margin-bottom: 2px; /* spacing between link and description */
+}
+
+.description  {
+  margin-top: 0;
+}
+
 .leftside > p > a::before {
   content: ">>";
   position: absolute;
@@ -49,10 +58,6 @@ a:hover {
 }
 
 .spacer {
-  height: 1px;
-}
-
-.spacerlarge {
   height: 20px;
 }
 
@@ -89,7 +94,7 @@ body {
 .projects-menu {
   display: block;
   position: absolute;
-  top: 120%;
+  top: 40px;
   background-color: #000;
   opacity: 0;
   transform: translateX(-20px);
