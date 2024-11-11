@@ -94,7 +94,7 @@ body {
 .projects-menu {
   display: block;
   position: absolute;
-  top: 40px;
+  top: 35px;
   background-color: #000;
   opacity: 0;
   transform: translateX(-20px);
