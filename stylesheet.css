@@ -64,10 +64,9 @@ a:hover {
 html,
 body {
   min-height: 100dvh;
-  padding: 0 50px;
+  padding: 0 10px;
   margin: 0;
   user-select: none;
-  overflow-x: hidden;
   background-color: #000000;
   display: flex;
   align-items: center;
