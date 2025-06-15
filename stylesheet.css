@@ -117,14 +117,14 @@ body {
   content: ">>";
   position: absolute;
   display: inline-block;
-  left: -60px;
+  left: -50px;
   transition: all 0.5s cubic-bezier(0.5, 1, 0, 1);
   color: #ffffff00;
   pointer-events: none;
 }
 
 .projects-menu a:hover::before {
-  left: -40px;
+  left: -30px;
   color: inherit;
   pointer-events: none;
 }
