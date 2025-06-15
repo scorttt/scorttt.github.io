@@ -94,7 +94,7 @@
     nekoEl.style.width = "32px";
     nekoEl.style.height = "32px";
     nekoEl.style.position = "fixed";
-    nekoEl.style.pointerEvents = "auto"; 
+    nekoEl.style.pointerEvents = "none"; 
     nekoEl.style.imageRendering = "pixelated";
     nekoEl.style.left = `${nekoPosX - 16}px`;
     nekoEl.style.top = `${nekoPosY - 16}px`;
@@ -121,29 +121,29 @@
     mousePosX = event.clientX;
     mousePosY = event.clientY;
   
-    if (isDragging) {
-      nekoPosX = mousePosX - dragOffsetX;
-      nekoPosY = mousePosY - dragOffsetY;
-      updateNekoPosition();
-    }
+    // if (isDragging) {
+    //   nekoPosX = mousePosX - dragOffsetX;
+    //   nekoPosY = mousePosY - dragOffsetY;
+    //   updateNekoPosition();
+    // }
   }
   
-  function onMouseDown(event) {
-    isDragging = true;
-    dragOffsetX = event.clientX - nekoPosX;
-    dragOffsetY = event.clientY - nekoPosY;
-  }
+  // function onMouseDown(event) {
+  //   isDragging = true;
+  //   dragOffsetX = event.clientX - nekoPosX;
+  //   dragOffsetY = event.clientY - nekoPosY;
+  // }
   
-  function onMouseUp() {
-    isDragging = false;
-  }
+  // function onMouseUp() {
+  //   isDragging = false;
+  // }
   
-  function updateNekoPosition() {
-    nekoPosX = Math.min(Math.max(16, nekoPosX), window.innerWidth - 16);
-    nekoPosY = Math.min(Math.max(16, nekoPosY), window.innerHeight - 16);
-    nekoEl.style.left = `${nekoPosX - 16}px`;
-    nekoEl.style.top = `${nekoPosY - 16}px`;
-  }
+  // function updateNekoPosition() {
+  //   nekoPosX = Math.min(Math.max(16, nekoPosX), window.innerWidth - 16);
+  //   nekoPosY = Math.min(Math.max(16, nekoPosY), window.innerHeight - 16);
+  //   nekoEl.style.left = `${nekoPosX - 16}px`;
+  //   nekoEl.style.top = `${nekoPosY - 16}px`;
+  // }
 
   let lastFrameTimestamp;
 
