@@ -124,7 +124,7 @@ body {
 }
 
 .projects-menu a:hover::before {
-  left: -30px;
+  left: -35px;
   color: inherit;
   pointer-events: none;
 }
