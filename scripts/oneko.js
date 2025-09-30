@@ -113,8 +113,8 @@
 
     window.requestAnimationFrame(onAnimationFrame);
 
-    nekoEl.addEventListener("mousedown", onMouseDown);
-    document.addEventListener("mouseup", onMouseUp);
+    // nekoEl.addEventListener("mousedown", onMouseDown);
+    // document.addEventListener("mouseup", onMouseUp);
   }
 
   function onMouseMove(event) {
