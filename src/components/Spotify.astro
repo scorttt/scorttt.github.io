@@ -36,6 +36,11 @@ import { Icon } from 'astro-icon/components';
 </div>
 
 <script>
+    const intervals: ReturnType<typeof setInterval>[] = [];
+    
+    document.addEventListener("astro:before-preparation", () =>
+        intervals.forEach(clearInterval));
+
     document.addEventListener("astro:page-load", () =>
     {
         const UID = "66056020786425856";
@@ -58,6 +63,9 @@ import { Icon } from 'astro-icon/components';
         let songEnded = false;
 
         const formattedTime = (second: number) => `${Math.floor(second / 60)}:${String(Math.floor(second % 60)).padStart(2, "0")}`;
+
+        if (!art) 
+            return;
 
         art.addEventListener("error", () => 
         {

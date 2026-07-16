@@ -16,6 +16,11 @@ import { Icon } from 'astro-icon/components';
 </div>
 
 <script>
+    const intervals: ReturnType<typeof setInterval>[] = [];
+    
+    document.addEventListener("astro:before-preparation", () =>
+        intervals.forEach(clearInterval));
+
     document.addEventListener("astro:page-load", () => 
     {
         const UID = "66056020786425856";
@@ -26,6 +31,10 @@ import { Icon } from 'astro-icon/components';
         const statusText = document.getElementById('status-text');
         
         const gameElapsed = document.getElementById('game-elapsed') as HTMLElement;
+        
+        if (!gameElapsed) 
+            return;
+
         const maxGameTextLength = 30;
     
         let gameInterval: ReturnType<typeof setInterval> | null = null;
